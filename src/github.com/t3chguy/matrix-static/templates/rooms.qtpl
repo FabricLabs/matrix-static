@@ -15,14 +15,14 @@
 
 {% stripspace %}
 {% func (p *RoomsPage) Title() %}
-    Matrix Static - Public Rooms
+    Public Rooms &middot; Grove
 {% endfunc %}
 {% func (p *RoomsPage) Head() %}
     {%= PaginatorHeadLinks(p) %}
 {% endfunc %}
 
 {% func (p *RoomsPage) Header() %}
-    <h1>matrix-static</h1>
+    <h1>Grove</h1>
 {% endfunc %}
 
 {% func (p *RoomsPage) printRoomRow(Room gomatrix.PublicRoomsChunk) %}
@@ -30,14 +30,14 @@
         <td>
             <a href="./room/{%s Room.RoomID %}/">
                 {% if Room.AvatarUrl != "" %}
-                    <img class="avatar roomAvatar" src="{%s Room.AvatarUrl %}" alt="{%s Room.RoomID %}" />
+                    <img class="ui image roomAvatar" src="{%s Room.AvatarUrl %}" alt="{%s Room.RoomID %}" />
                 {% else %}
                     {% if Room.Name != "" %}
-                        <img class="avatar roomAvatar" src="./avatar/{%u Room.Name %}" alt="{%s Room.RoomID %}" />
+                        <img class="ui image roomAvatar" src="./avatar/{%u Room.Name %}" alt="{%s Room.RoomID %}" />
                     {% elseif Room.CanonicalAlias != "" %}
-                        <img class="avatar roomAvatar" src="./avatar/{%u Room.CanonicalAlias %}" alt="{%s Room.RoomID %}" />
+                        <img class="ui image roomAvatar" src="./avatar/{%u Room.CanonicalAlias %}" alt="{%s Room.RoomID %}" />
                     {% else %}
-                        <img class="avatar roomAvatar" src="./img/logo_missing_transparent.png" alt="{%s Room.RoomID %}" />
+                        <img class="ui image roomAvatar" src="./img/logo_missing_transparent.png" alt="{%s Room.RoomID %}" />
                     {% endif %}
                 {% endif %}
             </a>
@@ -57,7 +57,7 @@
 
     {%= PaginatorCurPage(p) %}
 
-    <table id="roomList">
+    <table id="roomList" class="ui celled padded table">
         <thead>
             <tr>
                 <th>Logo</th>

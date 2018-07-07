@@ -22,7 +22,7 @@
 
 
 {% func (p *RoomServersPage) Title() %}
-    Matrix Static - Public Room Servers - {% space %}{%s p.RoomInfo.Name %}{% space %} - {% space %}{%d p.RoomInfo.NumServers %}{% space %} servers
+    {% space %}{%s p.RoomInfo.Name %}{% space %} &middot; {% space %}{%d p.RoomInfo.NumServers %}{% space %} public servers &middot; Grove
 {% endfunc %}
 
 {% func (p *RoomServersPage) Head() %}

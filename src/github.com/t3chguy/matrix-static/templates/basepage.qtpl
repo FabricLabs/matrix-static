@@ -15,6 +15,9 @@ PrintPage prints Page p
         <meta charset="UTF-8">
         <title>{%= p.Title() %}</title>
         <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/semantic.min.css">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="/semantic.min.js"></script>
 
         <link rel="shortcut icon" href="/img/favicon.ico">
         <link rel="icon" sizes="16x16 32x32 64x64" href="/img/favicon.ico">
@@ -40,18 +43,25 @@ PrintPage prints Page p
         <base href="/">
     </head>
     <body>
-        <header>
-            {%= p.Header() %}
-        </header>
-        <hr>
-        {%= p.Body() %}
+        <div class="ui container">
+            <div class="ui menu">
+                <div class="ui container">
+                    <a href="/" class="logo brand item">
+                      <span class="brand normal">Grove</span>
+                    </a>
+                </div>
+            </div>
+            <div class="ui segment">
+                {%= p.Body() %}
+            </div>
+        </div>
     </body>
     </html>
 {% endfunc %}
 
 Base page implementation. Other pages may inherit from it if they need overriding only certain Page methods
 {% code type BasePage struct {} %}
-{% func (p *BasePage) Title() %}Matrix Static{% endfunc %}
+{% func (p *BasePage) Title() %}Grove{% endfunc %}
 {% func (p *BasePage) Head() %}{% endfunc %}
 {% func (p *BasePage) Header() %}Default Header{% endfunc %}
 {% func (p *BasePage) Body() %}Default Body{% endfunc %}

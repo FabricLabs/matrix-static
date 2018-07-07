@@ -10,7 +10,7 @@
 
 {% stripspace %}
 {% func (p *RoomErrorPage) Title() %}
-    Matrix Static - Public Room ERROR - {% space %}{%s p.RoomInfo.Name %}
+    ERROR &middot; {%s p.RoomInfo.Name %} &middot; Grove
 {% endfunc %}
 
 {% func (p *RoomErrorPage) Head() %}

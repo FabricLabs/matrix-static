@@ -147,7 +147,10 @@ func main() {
 
 	publicRouter.Static("/img", "./assets/img")
 	publicRouter.Static("/css", "./assets/css")
+	publicRouter.Static("/themes", "./assets/themes")
 	publicRouter.StaticFile("/robots.txt", "./assets/robots.txt")
+	publicRouter.StaticFile("/semantic.min.js", "./assets/semantic.min.js")
+	publicRouter.StaticFile("/semantic.min.css", "./assets/semantic.min.css")
 
 	publicRouter.GET("/", func(c *gin.Context) {
 		page := utils.StrToIntDefault(c.DefaultQuery("page", "1"), 1)

@@ -140,7 +140,7 @@
                 alt := Str(ev.Content["body"])
             %}
             <a href="{%s mxc.ToURL() %}" rel="noopener">
-                <img class="m.image" src="{%s mxcThumbURL %}" alt="{%s alt %}" />
+                <img class="ui image m.image" src="{%s mxcThumbURL %}" alt="{%s alt %}" />
                 <br>
                 <sup>{%s Str(ev.Content["body"]) %}</sup>
             </a>
@@ -152,7 +152,7 @@
             %}
             <a href="{%s mxc.ToURL() %}" rel="noopener">
                 {% if ev.Content["thumbnail_url"] != "" %}
-                    <img class="m.file" src="{%s mxcThumbURL %}" alt="{%s alt %}" />
+                    <img class="ui image m.file" src="{%s mxcThumbURL %}" alt="{%s alt %}" />
                     <br>
                 {% endif %}
                 <sup>{%s Str(ev.Content["body"]) %}</sup>
@@ -214,9 +214,9 @@
     <a href="./room/{%s p.RoomInfo.RoomID %}/members/{%s mxid %}">
         {% if memberInfo.AvatarURL.IsValid() %}
             {% code mxcURL := memberInfo.AvatarURL.ToThumbURL(48, 48, "crop") %}
-            <img class="avatar userAvatar" src="{%s mxcURL %}" alt="{%s mxid %}" />
+            <img class="ui image avatar userAvatar" src="{%s mxcURL %}" alt="{%s mxid %}" />
         {% else %}
-            <img class="avatar userAvatar" src="./avatar/{%u memberInfo.GetName() %}" alt="{%s mxid %}" />
+            <img class="ui image avatar userAvatar" src="./avatar/{%u memberInfo.GetName() %}" alt="{%s mxid %}" />
         {% endif %}
 
         {%s memberInfo.GetName() %}
@@ -315,7 +315,7 @@
 
 
 {% func (p *RoomChatPage) Title() %}
-    Matrix Static - Public Room Timeline - {% space %}{%s p.RoomInfo.Name %}
+    {% space %}{%s p.RoomInfo.Name %} &middot; Timeline &middot; Grove
 {% endfunc %}
 
 {% func (p *RoomChatPage) Head() %}

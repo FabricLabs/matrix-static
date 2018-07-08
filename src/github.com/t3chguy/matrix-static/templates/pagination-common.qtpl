@@ -28,37 +28,33 @@ Pages are ints and can be +/- 1 to get siblings
         backUrl := p.BackUrl()
     %}
 
-    <footer>
-        <span style="float: left;">
-            <span>
-                {% if curPage > 1 %}
-                    <a href="{%s baseUrl %}?page={%d curPage -1 %}">Previous Page</a>
-                {% elseif curPage == 1 %}
-                    {% if p.HasNextPage() %}
-                        <a href="{%s baseUrl %}?page=0">See All</a>
-                    {% else %}
-                        Only Page
-                    {% endif %}
-                {% endif %}
-            </span>
-            {% space %}
-            <span>
-                {% if curPage == 0 %}
-                    <a href="{%s baseUrl %}?page=1">First Page</a>
-                {% elseif p.HasNextPage() %}
-                    <a href="{%s baseUrl %}?page={%d curPage +1 %}">Next Page</a>
-                {% elseif curPage > 1 %}
+    <div>
+        <span>
+            {% if curPage > 1 %}
+                <a href="{%s baseUrl %}?page={%d curPage -1 %}">Previous Page</a>
+            {% elseif curPage == 1 %}
+                {% if p.HasNextPage() %}
                     <a href="{%s baseUrl %}?page=0">See All</a>
+                {% else %}
+                    Only Page
                 {% endif %}
-            </span>
+            {% endif %}
         </span>
+        {% space %}
+        <span>
+            {% if curPage == 0 %}
+                <a href="{%s baseUrl %}?page=1">First Page</a>
+            {% elseif p.HasNextPage() %}
+                <a href="{%s baseUrl %}?page={%d curPage +1 %}">Next Page</a>
+            {% elseif curPage > 1 %}
+                <a href="{%s baseUrl %}?page=0">See All</a>
+            {% endif %}
+        </span>
+
         {% if backUrl != "" %}
-            <span style="float: right;">
-                <a href="{%s backUrl %}">Back to Room</a>
-            </span>
+            <a href="{%s backUrl %}" class="ui button"><i class="left chevron icon"></i>Back to Room</a>
         {% endif %}
-        <span style="clear: both;"></span>
-    </footer>
+    </div>
 {% endfunc %}
 
 {% func PaginatorHeadLinks(p Paginator) %}

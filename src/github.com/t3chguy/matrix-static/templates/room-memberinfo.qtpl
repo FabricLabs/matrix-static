@@ -23,9 +23,6 @@
 {% endfunc %}
 
 {% func (p *RoomMemberInfoPage) body() %}
-    MemberInfo of {% space %}{%s p.MemberInfo.GetName() %}{% space %} ({%s p.MemberInfo.MXID %})
-    <hr>
-
     <div class="ui card">
         {% if p.MemberInfo.AvatarURL.IsValid() %}
             <a href="{%s p.MemberInfo.AvatarURL.ToURL() %}" class="image">

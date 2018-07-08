@@ -36,9 +36,12 @@ PrintPage prints Page p
         <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon-76.png">
         <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon-152.png">
         <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon-180.png">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="msapplication-TileImage" content="/img/favicon-144.png">
         <meta name="msapplication-config" content="/img/browserconfig.xml">
+
         {%= p.Head() %}
         <base href="/">
     </head>
@@ -49,6 +52,7 @@ PrintPage prints Page p
                     <a href="/" class="logo brand item">
                       <span class="brand normal">Grove</span>
                     </a>
+                    <a href="/" class="item">Rooms</a>
                 </div>
             </div>
             <div class="ui segment">

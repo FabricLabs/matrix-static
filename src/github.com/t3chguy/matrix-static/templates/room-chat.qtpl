@@ -336,15 +336,12 @@
         {% if p.AtTopEnd %}
             <h4>You have reached the beginning of time (for this room).</h4>
         {% else %}
-            <a href="./room/{%s p.RoomInfo.RoomID %}/?anchor={%s p.Anchor %}&offset={%d p.CurrentOffset + p.PageSize %}">
-                <h4>Load older messages</h4>
-            </a>
+            <a href="./room/{%s p.RoomInfo.RoomID %}/?anchor={%s p.Anchor %}&offset={%d p.CurrentOffset + p.PageSize %}" class="ui top attached button">Load older messages</a>
         {% endif %}
     </div>
-    <hr>
 
     {% if len(p.Events) > 0 %}
-        <table id="timeline">
+        <table id="timeline" class="ui table">
             <thead>
                 <tr>
                     <th>Timestamp</th>
@@ -367,17 +364,13 @@
         <h3>No Events</h3>
     {% endif %}
 
-    <hr>
     <div class="paginate">
         {% if p.AtBottomEnd %}
             <h4>There are no newer messages yet.</h4>
         {% else %}
-            <a href="./room/{%s p.RoomInfo.RoomID %}/?anchor={%s p.Anchor %}&offset={%d p.CurrentOffset - len(p.Events) %}">
-                <h4>Show newer messages</h4>
-            </a>
+            <a href="./room/{%s p.RoomInfo.RoomID %}/?anchor={%s p.Anchor %}&offset={%d p.CurrentOffset - len(p.Events) %}" class="ui bottom attached button">Show newer messages</a>
         {% endif %}
     </div>
-    <hr>
 
     <a href="./">Back to Room List</a>
 {% endfunc %}

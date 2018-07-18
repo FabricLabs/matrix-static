@@ -251,7 +251,7 @@
                 time := parseEventTimestamp(ev.Timestamp)
                 title := time.Format("2 Jan 2006 15:04:05")
             %}
-            <a href="https://matrix.to/#/{%s p.RoomInfo.RoomID %}/{%s ev.ID %}" title="{%s title %}">
+            <a href="https://to.fabric.pub/#/{%s p.RoomInfo.RoomID %}/{%s ev.ID %}" title="{%s title %}">
                 {%s time.Format("15:04:05") %}
             </a>
         </td>

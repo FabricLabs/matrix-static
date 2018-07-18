@@ -38,7 +38,7 @@
             </a>
         </div>
         <div class="extra content">
-            <a href="https://matrix.to/#/{%s p.MemberInfo.MXID %}"><i class="linkify icon"></i></a>
+            <a href="https://to.fabric.pub/#/{%s p.MemberInfo.MXID %}"><i class="linkify icon"></i></a>
         </div>
     </div>
 
